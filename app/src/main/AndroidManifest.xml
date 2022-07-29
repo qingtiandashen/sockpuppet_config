@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="abc"
-            android:value="${appKeyPl}" />
+<!--        <meta-data-->
+<!--            android:name="abc"-->
+<!--            android:value="${appKeyPl}" />-->
     </application>
 
 </manifest>
