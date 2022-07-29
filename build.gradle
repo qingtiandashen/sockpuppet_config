@@ -9,13 +9,13 @@ buildscript {
         mavenCentral()
         mavenLocal()
         maven { url 'https://jitpack.io' }
-        maven {
-            url "$rootDir/sockpuppet/build/repo"
-        }
+//        maven {
+//            url "$rootDir/sockpuppet/build/repo"
+//        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.2"
-        classpath "com.andrea.sockpuppet:sockpuppet_debug:0.0.0.1"
+//        classpath "com.andrea.sockpuppet:sockpuppet_debug:0.0.0.1"
     }
 }
 
@@ -28,9 +28,9 @@ allprojects {
         mavenCentral()
         maven { url 'https://jitpack.io' }
         mavenLocal()
-        maven {
-            url "$rootDir/sockpuppet/build/repo"
-        }
+//        maven {
+//            url "$rootDir/sockpuppet/build/repo"
+//        }
     }
 }
 
