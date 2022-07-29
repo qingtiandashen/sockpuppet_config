@@ -1,0 +1,4 @@
+rootProject.name = "SockpuppetConfig"
+include ':app'
+include ':sockpuppet'
+include ':test'
