@@ -1,14 +1,14 @@
 plugins {
     id 'com.android.application'
-//    id 'com.andrea.sockpuppet'
+    id 'com.andrea.sockpuppet'
 }
 
-//sockpuppet {
-//    templatePlaceholderPath file("../file/placeholderTemplat.xml").absolutePath
-//    sourcePlaceholderPath "**/config_placeholder.xml"
-//    templateBuildPath file("../file/buildTemplat.xml").absolutePath
-//    sourceBuildPath "**/config_build.xml"
-//}
+sockpuppet {
+    templatePlaceholderPath file("../file/placeholderTemplat.xml").absolutePath
+    sourcePlaceholderPath "**/config_placeholder.xml"
+    templateBuildPath file("../file/buildTemplat.xml").absolutePath
+    sourceBuildPath "**/config_build.xml"
+}
 
 android {
     compileSdk 31

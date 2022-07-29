@@ -15,7 +15,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.2"
-//        classpath "com.andrea.sockpuppet:sockpuppet_debug:0.0.0.1"
+        classpath "com.github.qingtiandashen.sockpuppet_config:sockpuppet:0.0.1-alpha2"
     }
 }
 

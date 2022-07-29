@@ -22,10 +22,12 @@ class SockpuppetConfigTask implements Plugin<Project> {
 
         injectSockExtensions()
 
+        //只支持主module
         if (!mProject.plugins.hasPlugin('com.android.application')) {
             throw new GradleException('com.android.application required')
         }
 
+        //需要在afterProject生命周期里添加placeholder和buildConfig才生效
         mProject.gradle.afterProject {
             System.out.println("------------------auto config setting start----------------------");
             System.out.println("2---templatePlaceholderPath--${mProject.sockpuppet.templatePlaceholderPath}");
@@ -51,9 +53,12 @@ class SockpuppetConfigTask implements Plugin<Project> {
         }
     }
 
+    /**
+     * xml内容转换成BuildConfig
+     * 会对boolean int string 做区分，转换成对应的类型
+     * @param sourceFileTree
+     */
     private static void parseBuildConfig(FileTree sourceFileTree) {
-//        def file = entry.layout.projectDirectory.asFileTree
-
 
         def patternSet = new PatternSet();
         patternSet.include(mProject.sockpuppet.sourceBuildPath)
@@ -66,7 +71,6 @@ class SockpuppetConfigTask implements Plugin<Project> {
 
                 result.children().each {
                     if (it.name() == "string") {
-//                    it.text()
 //                    println "build string ${it.@name}-------> ${it.text()}"
                         def content = it.text()
                         if (StringUtils.isBool(content)) {//是不是bool值
@@ -97,6 +101,11 @@ class SockpuppetConfigTask implements Plugin<Project> {
         }
     }
 
+    /**
+     * xml内容转换成placeholder
+     * 只支持string转换成placeholder，不支持string-array
+     * @param sourceFileTree
+     */
     private static void parsePlaceholder(FileTree sourceFileTree) {
         def patternSet = new PatternSet();
         patternSet.include(mProject.sockpuppet.sourcePlaceholderPath)
@@ -122,12 +131,22 @@ class SockpuppetConfigTask implements Plugin<Project> {
         }
     }
 
+    /**
+     * placeholder配置和规定模版是不是一致
+     * @param sourceFile
+     * @return
+     */
     private static boolean isPlaceholderMatch(File sourceFile) {
         def templateFile = new File(mProject.sockpuppet.templatePlaceholderPath)
 //        println("templateFile: " + templateFile.absolutePath)
         return isMatchTemplate(templateFile, sourceFile)
     }
 
+    /**
+     * buildConfig配置和模版是不是一致
+     * @param sourceFile
+     * @return
+     */
     private static boolean isBuildConfigMatch(File sourceFile) {
         def templateFile = new File(mProject.sockpuppet.templateBuildPath)
 //        println("templateFile: " + templateFile.absolutePath)
