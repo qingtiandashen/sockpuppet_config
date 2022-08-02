@@ -4,12 +4,12 @@ plugins {
 }
 
 //sockpuppet {
-//    xml {
-//        templatePlaceholderPath file("../file/placeholderTemplat.xml").absolutePath
-//        sourcePlaceholderPath "**/config_placeholder.xml"
-//        templateBuildPath file("../file/buildTemplat.xml").absolutePath
-//        sourceBuildPath "**/config_build.xml"
-//    }
+////    xml {
+////        templatePlaceholderPath file("../file/placeholderTemplat.xml").absolutePath
+////        sourcePlaceholderPath "**/config_placeholder.xml"
+////        templateBuildPath file("../file/buildTemplat.xml").absolutePath
+////        sourceBuildPath "**/config_build.xml"
+////    }
 //    json {
 //        templatePath file("../file/puppetTemplat.json").absolutePath
 //        sourcePath "**/puppet.json"

@@ -71,16 +71,16 @@ class JsonConfigTask extends BaseConfigTask {
             def jsonFuncName = item[Config.JSON_FUNC_NAME]
             def value = item[Config.JSON_VALUE]
             if (StringUtils.isEmpty(jsonFuncName)) {//普通参数替换
-                parseBuild(value)
+                parseBuild(name, value)
             } else {//函数替换
                 def result = getFuncResult(jsonFuncName, value as String[])
 //                addBuildConfigString(name, result)
-                parseBuild(result)
+                parseBuild(name, result)
             }
         }
     }
 
-    void parseBuild(Object value) {
+    void parseBuild(String name, Object value) {
         if (value instanceof ArrayList) {
             addBuildConfigList(name, value as String[])
         } else {
