@@ -69,7 +69,7 @@ public class JsonHelper {
         def templateResult = templateJsonSlurper.parse(templateFile)
         if (templateResult instanceof ArrayList) {
             templateResult.each { it ->
-                println "build string ${it}------->"
+//                println "build string ${it}------->"
                 if (it[Config.JSON_TYPE] == Config.KEY_PLACEHOLDER) {
                     addMap(placeholderMap, it[Config.JSON_LIST])
                 } else if (it[Config.JSON_TYPE] == Config.KEY_BUILD_CONFIG) {
@@ -82,7 +82,7 @@ public class JsonHelper {
         def sourceResult = sourceJsonSlurper.parse(templateFile)
         if (sourceResult instanceof ArrayList) {
             sourceResult.each { it ->
-                println "build string ${it}------->"
+//                println "build string ${it}------->"
                 if (it[Config.JSON_TYPE] == Config.KEY_PLACEHOLDER) {
                     removeMap(sourceFile, placeholderMap, it[Config.JSON_LIST])
                 } else if (it[Config.JSON_TYPE] == Config.KEY_BUILD_CONFIG) {
