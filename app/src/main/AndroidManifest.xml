@@ -23,9 +23,16 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="abc"
-            android:value="${appKeyPl}" />
+<!--        <meta-data-->
+<!--            android:name="param_flag"-->
+<!--            android:value="${REPLACE_ME}" />-->
+
+<!--        <meta-data-->
+<!--            android:name="param_flag2"-->
+<!--            android:value="${appkey2}" />-->
+<!--        <meta-data-->
+<!--            android:name="param_flag3"-->
+<!--            android:value="${aeae4}" />-->
     </application>
 
 </manifest>

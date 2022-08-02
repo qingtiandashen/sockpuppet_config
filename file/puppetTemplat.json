@@ -1,0 +1,31 @@
+[
+  {
+    "type": 0,
+    "list": [
+      {
+        "name": "appkey2",
+        "funcName": "aeae2",
+        "value": []
+      },
+      {
+        "name": "aeae4",
+        "funcName": "aeae4",
+        "value": []
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "list": [
+      {
+        "name": "appkey3",
+        "value": ""
+      },
+      {
+        "name": "aeae4",
+        "funcName": "aeae4",
+        "value": []
+      }
+    ]
+  }
+]

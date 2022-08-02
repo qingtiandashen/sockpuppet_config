@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appKeyPl">i am app key 1</string>
+    <string name="REPLACE_ME">i am app key 1</string>
     <string-array name="file_debug_pl">
         <item>a</item>
         <item>b</item>
