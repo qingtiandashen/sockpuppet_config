@@ -16,22 +16,22 @@ abstract class BaseConfigTask {
 
     protected abstract void parse(FileTree sourceFileTree)
 
-    /**
-     * 获取调用方法的返回值
-     * @param key
-     * @param value
-     */
-    protected String getFuncResult(String funcName, List<String> args) {
-        return getFuncResult(funcName, args as String[])
-    }
+//    /**
+//     * 获取调用方法的返回值
+//     * @param key
+//     * @param value
+//     */
+//    protected Object getFuncResult(String funcName, List<String> args) {
+//        return getFuncResult(funcName, args as String[])
+//    }
 
     /**
      * 获取调用方法的返回值
      * @param key
      * @param value
      */
-    protected String getFuncResult(String funcName, Object... args) {
-        def result = ""
+    protected Object getFuncResult(String funcName, Object... args) {
+        def result
         try {
             result = mProject.invokeMethod(funcName, args)
         } catch (Exception ignore) {
